@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+outputs/*.pt
+outputs/*.pth
+outputs/*.json
+outputs/recolored/

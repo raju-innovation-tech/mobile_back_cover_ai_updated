@@ -1,0 +1,7 @@
+1) Put image/mask pairs into data/images and data/masks.
+2) python scripts/validate_dataset.py --images data/images --masks data/masks
+3) python scripts/make_splits.py --images data/images --masks data/masks --out data/splits --val 0.10 --test 0.10
+4) python scripts/train.py --config configs/train.yaml
+5) python scripts/evaluate.py --config configs/train.yaml --checkpoint outputs/best.pt --split test
+6) python scripts/infer.py --config configs/train.yaml --checkpoint outputs/best.pt --image YOUR.jpg --hex '#00A651' --output outputs/result.png
+7) python scripts/pixel_qa.py --original YOUR.jpg --result outputs/result.png --mask outputs/result_mask.png

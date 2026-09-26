@@ -1,0 +1,10 @@
+numpy>=1.26,<2.0
+Pillow>=10.0
+opencv-python-headless>=4.9
+PyYAML>=6.0
+tqdm>=4.66
+scikit-image>=0.22
+albumentations>=1.4
+transformers>=4.45
+accelerate>=0.34
+safetensors>=0.4

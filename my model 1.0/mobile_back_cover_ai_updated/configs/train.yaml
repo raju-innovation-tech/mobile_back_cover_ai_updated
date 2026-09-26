@@ -1,0 +1,40 @@
+seed: 42
+num_classes: 4
+img_size: 768
+batch_size: 4
+num_workers: 4
+epochs: 50
+lr: 0.00006
+weight_decay: 0.01
+warmup_epochs: 3
+patience: 10
+amp: true
+grad_clip: 1.0
+pretrained: true
+model_name: nvidia/mit-b5
+train_split: data/splits/train.txt
+val_split: data/splits/val.txt
+test_split: data/splits/test.txt
+images_dir: data/images
+masks_dir: data/masks
+output_dir: outputs
+class_weights: [0.5, 1.2, 2.5, 2.5]
+loss:
+  ce: 1.0
+  dice: 1.0
+  boundary: 0.35
+  focal_gamma: 2.0
+  focal_weight: 0.25
+  leak_weight: 2.0
+inference:
+  threshold: 0.50
+  min_component_area_ratio: 0.00002
+  boundary_erode_px: 1
+  tta: true
+  multiscale: [0.75, 1.0, 1.25]
+  guided_filter: true
+  guided_filter_radius: 8
+  guided_filter_eps: 0.001
+  hires_refine: true
+  hires_refine_size: 1024
+  hires_pad_ratio: 0.12
